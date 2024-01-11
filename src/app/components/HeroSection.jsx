@@ -21,6 +21,11 @@ const HeroSection = () => {
             alt="hero image"
             width={300}
             height={300}
+            style={{
+              borderRadius: "50%",
+              objectFit: "cover",
+              boxShadow: "2px 5px 8px 5px black",
+            }}
           />
         </div>
       </div>
