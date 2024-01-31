@@ -2,6 +2,43 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { skillsList, experienceList } from "../utils/tab-data-lists";
+
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <ul className="list-disc pl-2">
+        {skillsList.map((skill) => (
+          <li key={skill}>{skill}</li>
+        ))}
+      </ul>
+    ),
+  },
+  {
+    title: "Education",
+    id: "education",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>
+          Universidade Vila Velha - UVV: Electrical and Electronics Engineering
+        </li>
+      </ul>
+    ),
+  },
+  {
+    title: "Experience",
+    id: "experience",
+    content: (
+      <ul className="list-disc pl-2">
+        {experienceList.map((experience) => (
+          <li key={experience}>{experience}</li>
+        ))}
+      </ul>
+    ),
+  },
+];
 
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
@@ -15,7 +52,7 @@ const AboutSection = () => {
 
   return (
     <section className="text-white">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="md:grid md:grid-cols-2 gap-8 items-top py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src={"/images/projects/steampunk-computer.png"}
           alt="steampunk computer"
@@ -23,7 +60,7 @@ const AboutSection = () => {
           height={500}
         />
 
-        <div>
+        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base md:text-lg">
             Software developer with experience in the following areas: Project
@@ -37,7 +74,7 @@ const AboutSection = () => {
             Languages: Native speaker of portuguese, fluent in english and
             advanced in spanish.
           </p>
-          <div className="flex flex-row mt-8">
+          <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -56,6 +93,9 @@ const AboutSection = () => {
             >
               Experience
             </TabButton>
+          </div>
+          <div className="flex mt-8">
+            {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
       </div>
