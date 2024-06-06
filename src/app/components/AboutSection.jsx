@@ -9,7 +9,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
         {skillsList.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
@@ -20,7 +20,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
         <li>
           Universidade Vila Velha - UVV: Electrical and Electronics Engineering
         </li>
@@ -31,7 +31,7 @@ const TAB_DATA = [
     title: "Experience",
     id: "experience",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
         {experienceList.map((experience) => (
           <li key={experience}>{experience}</li>
         ))}
