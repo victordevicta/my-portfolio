@@ -47,7 +47,7 @@ const HeroSection = () => {
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
           <Image
-            src={"/images/projects/hero-image.png"}
+            src={"/images/hero-image.png"}
             alt="hero image"
             width={300}
             height={300}

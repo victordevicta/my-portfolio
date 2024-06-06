@@ -9,7 +9,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
         {skillsList.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
@@ -20,7 +20,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
         <li>
           Universidade Vila Velha - UVV: Electrical and Electronics Engineering
         </li>
@@ -31,7 +31,7 @@ const TAB_DATA = [
     title: "Experience",
     id: "experience",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
         {experienceList.map((experience) => (
           <li key={experience}>{experience}</li>
         ))}
@@ -54,7 +54,7 @@ const AboutSection = () => {
     <section className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-top py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
-          src={"/images/projects/steampunk-computer.png"}
+          src={"/images/steampunk-computer.png"}
           alt="steampunk computer"
           width={500}
           height={500}
