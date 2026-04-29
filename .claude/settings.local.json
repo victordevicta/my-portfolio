@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tasklist /FI \"PID eq 23948\")",
+      "PowerShell(Get-Process -Id 23948 -ErrorAction SilentlyContinue)"
+    ]
+  }
+}

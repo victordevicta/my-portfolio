@@ -9,7 +9,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-2 gap-x-7">
+      <ul className="list-disc pl-2 grid grid-cols-1 md:grid-cols-3 gap-x-7">
         {skillsList.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
