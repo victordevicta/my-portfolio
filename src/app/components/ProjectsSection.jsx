@@ -12,26 +12,16 @@ const projectsData = [
     image: "/images/projects/pokedex.jpg",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/",
+    // previewUrl: "/",
   },
   {
     id: 2,
-    title: "The Satanic Blog Project",
-    description:
-      "A catalogue where we can see details from the seven demons masters of the seven circles of hell and archetypes of the seven deadly sins",
-    image: "/images/projects/satanic-blog2.jpg",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 3,
     title: "Next.js Portfolio Website",
     description: "My personal portifolio written in Next.js",
-    image: "/images/projects/steampunk-computer.png",
+    image: "/images/projects/steampunk-atom.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/",
+    // previewUrl: "/",
   },
 ];
 
@@ -43,12 +33,14 @@ const ProjectsSection = () => {
   };
 
   const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
+    project.tag.includes(tag),
   );
 
   return (
-    <>
-      <h2>My Projects</h2>
+    <section id="projects" className="scroll-mt-[185px]">
+      <h2 className="font-serif text-4xl font-bold text-brass-300 mb-4 tracking-wide text-center md:text-left">
+        My Projects
+      </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
@@ -69,11 +61,11 @@ const ProjectsSection = () => {
             description={project.description}
             imgUrl={project.image}
             gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
+            // previewUrl={project.previewUrl}
           />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

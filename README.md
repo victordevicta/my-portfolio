@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚙️ Victor de Victa — Portfolio
 
-## Getting Started
+A personal portfolio site with a steampunk soul — brass gradients, gear dividers, and warm bronze tones wrapped around a clean, modern Next.js build.
 
-First, run the development server:
+Live sections walk through who I am, what I've worked on, and what I've shipped: an animated hero, a tabbed skills/education/experience timeline, and a filterable project showcase.
+
+## ✨ Features
+
+- **Animated hero** — role titles cycle through a typewriter effect (`react-type-animation`)
+- **Tabbed "About Me"** — Skills, Education and Experience rendered from a single reusable timeline component, each with tags, dates and locations
+- **Filterable projects grid** — tag-based filtering (`All` / `Web`) with hover-reveal repo links
+- **Steampunk visual theme** — bronze/brass color palette, gear-icon section dividers, brass-framed imagery, subtle grain texture
+- **Responsive navigation** — collapsible mobile menu, smooth-scrolling anchor links tuned to clear the fixed navbar
+- **CV download & LinkedIn CTA** — one click to grab the résumé PDF or head straight to LinkedIn
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Framework | [Next.js 14](https://nextjs.org/) (App Router) |
+| UI | [React 18](https://react.dev/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) with a custom bronze/brass theme |
+| Icons | [Heroicons](https://heroicons.com/) |
+| Animation | [react-type-animation](https://www.npmjs.com/package/react-type-animation) |
+| Testing | [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/) |
+| Fonts | `next/font/google` (Inter) |
+
+## 🚀 Getting Started
+
+Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see it live. The page hot-reloads as you edit files under `src/app`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📜 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create an optimized production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint over the project |
+| `npm run test` | Run the Jest test suite once |
+| `npm run test:watch` | Run tests in watch mode |
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/app/
+├── components/          # UI building blocks (Navbar, HeroSection, ProjectCard, ...)
+│   └── __tests__/       # Component tests (Jest + React Testing Library)
+├── utils/
+│   └── tab-data-lists.js  # Skills, education and experience data
+├── globals.css           # Theme, background texture, base styles
+├── layout.js              # Root layout, fonts and metadata
+└── page.js                # Page composition (Hero, About, Projects)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧪 Testing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Component behavior — tab switching, project filtering, mobile menu toggling, nav links — is covered with Jest and React Testing Library. Run the suite with:
 
-## Deploy on Vercel
+```bash
+npm run test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Personal project — feel free to look around, but please don't reuse the content as your own.
