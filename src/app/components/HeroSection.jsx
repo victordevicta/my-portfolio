@@ -25,6 +25,7 @@ const HeroSection = () => {
                 1000,
               ]}
               wrapper="span"
+              className="inline-block min-h-[84px] sm:min-h-0 align-top"
               speed={10}
               repeat={Infinity}
             />
