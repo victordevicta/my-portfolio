@@ -1,21 +1,18 @@
 export const skillsList = [
   {
+    category: "Programming Languages",
+    description: "Core languages used across web, enterprise and embedded projects",
+    techs: ["JavaScript", "TypeScript", "Java", "C#", "C", "Assembly", "ABAP"],
+  },
+  {
     category: "Frontend Development",
     description: "Modern web interfaces and responsive applications",
-    techs: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "TypeScript",
-      "Bootstrap",
-      "Flutter",
-      "PO-UI",
-    ],
+    techs: ["React", "Next.js", "Bootstrap", "Flutter", "Angular", "PO-UI"],
   },
   {
     category: "Backend Development",
     description: "APIs, services and business logic",
-    techs: ["Node.js", "NestJS", "Java", "C#", "WCF"],
+    techs: ["Node.js", "NestJS", ".NET", "WCF"],
   },
   {
     category: "Cloud & DevOps",
@@ -30,12 +27,12 @@ export const skillsList = [
   {
     category: "Enterprise & SAP",
     description: "Enterprise systems and business applications",
-    techs: ["SAP", "ABAP"],
+    techs: ["SAP"],
   },
   {
     category: "Embedded Systems",
     description: "Low-level programming and hardware integration",
-    techs: ["C", "Assembly", "PIC", "Arduino"],
+    techs: ["PIC", "Arduino"],
   },
   {
     category: "Engineering & Management",
