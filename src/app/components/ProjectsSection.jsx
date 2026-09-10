@@ -34,7 +34,7 @@ const projectsData = [
     image: "/images/projects/macrocounter.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/victordevicta/macro-counter-o-doom-and-dispair",
-    previewUrl: "https://macro-counter-o-doom-and-dispair-lg.vercel.app",
+    // previewUrl: "https://macro-counter-o-doom-and-dispair-lg.vercel.app",
     status: "in-development",
   },
   {
