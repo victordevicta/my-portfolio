@@ -100,6 +100,7 @@ const AboutSection = () => {
             width={500}
             height={500}
             className="rounded-md"
+            priority
           />
         </div>
 
@@ -107,7 +108,7 @@ const AboutSection = () => {
           <h2 className="font-serif text-4xl font-bold text-brass-300 mb-4 tracking-wide">
             About Me
           </h2>
-          <p className="text-base md:text-lg text-brass-100/80">
+          <p className="text-base md:text-lg text-brass-100/80 text-justify">
             Full-stack developer with experience building enterprise web
             applications, backend services, integrations and internal business
             systems across healthcare, finance, media, real estate and offshore

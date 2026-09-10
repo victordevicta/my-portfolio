@@ -3,6 +3,7 @@ import NavBar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import SectionDivider from "./components/SectionDivider";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
         <AboutSection />
         <SectionDivider />
         <ProjectsSection />
+        <SectionDivider />
       </div>
+      <Footer />
     </main>
   );
 }
