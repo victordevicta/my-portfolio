@@ -25,8 +25,7 @@ const Footer = () => {
           Victor de Victa
           <span className="text-brass-100/60 font-sans text-base">
             {" "}
-            — Software Engineer by trade. Pirate and vampire hunter in his spare
-            time.
+            — Software Engineer by trade.
           </span>
         </p>
 

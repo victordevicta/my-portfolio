@@ -6,22 +6,25 @@ import ProjectTag from "./ProjectTag";
 const projectsData = [
   {
     id: 1,
-    title: "Pokedex",
+    title: "Eldertable",
     description:
-      "A catalogue where we can see details from the first 250 pokemons.",
-    image: "/images/projects/pokedex.jpg",
+      "A virtual tabletop platform for creating and playing tabletop RPG campaigns online.",
+    image: "/images/projects/eldertable.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/victordevicta/pokedex",
-    // previewUrl: "/",
+    gitUrl: "https://github.com/victordevicta/rpg-tabletop",
+    previewUrl: "https://rpg-tabletop-api-weld.vercel.app",
+    status: "in-development",
   },
   {
     id: 2,
     title: "Next.js Portfolio Website",
-    description: "My personal portifolio written in Next.js.",
+    description:
+      "My personal portfolio, built with Next.js. In fact, you're looking at it right now.",
     image: "/images/projects/steampunk-atom.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/victordevicta/my-portfolio",
-    // previewUrl: "/",
+    previewUrl: "https://victordevicta.dev",
+    status: "completed",
   },
   {
     id: 3,
@@ -31,17 +34,19 @@ const projectsData = [
     image: "/images/projects/macrocounter.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/victordevicta/macro-counter-o-doom-and-dispair",
-    // previewUrl: "/",
+    previewUrl: "https://macro-counter-o-doom-and-dispair-lg.vercel.app",
+    status: "in-development",
   },
   {
     id: 4,
-    title: "Eldertable",
+    title: "Pokedex",
     description:
-      "A virtual tabletop platform for creating and playing tabletop RPG campaigns online.",
-    image: "/images/projects/eldertable.png",
+      "A catalogue where we can see details from the first 250 pokemons.",
+    image: "/images/projects/pokedex.jpg",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/victordevicta/rpg-tabletop",
-    // previewUrl: "/",
+    gitUrl: "https://github.com/victordevicta/pokedex",
+    previewUrl: "https://onboarding-inlight.vercel.app",
+    status: "completed",
   },
   {
     id: 5,
@@ -52,6 +57,7 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/victordevicta/lumi-motion",
     // previewUrl: "/",
+    status: "in-development",
   },
   {
     id: 6,
@@ -61,7 +67,8 @@ const projectsData = [
     image: "/images/projects/password-generator.png",
     tag: ["All", "Desktop"],
     gitUrl: "https://github.com/victordevicta/password-generator",
-    // previewUrl: "/",
+    previewUrl: "https://password-generator-dun-rho.vercel.app",
+    status: "completed",
   },
 ];
 
@@ -111,7 +118,8 @@ const ProjectsSection = () => {
             description={project.description}
             imgUrl={project.image}
             gitUrl={project.gitUrl}
-            // previewUrl={project.previewUrl}
+            previewUrl={project.previewUrl}
+            status={project.status}
           />
         ))}
       </div>
