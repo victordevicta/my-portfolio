@@ -7,7 +7,7 @@ describe("TabButton", () => {
     render(
       <TabButton active={false} selectTab={() => {}}>
         Skills
-      </TabButton>
+      </TabButton>,
     );
     expect(screen.getByText("Skills")).toBeInTheDocument();
   });
@@ -17,7 +17,7 @@ describe("TabButton", () => {
     render(
       <TabButton active={false} selectTab={selectTab}>
         Skills
-      </TabButton>
+      </TabButton>,
     );
 
     await userEvent.click(screen.getByText("Skills"));
@@ -29,7 +29,7 @@ describe("TabButton", () => {
     render(
       <TabButton active={true} selectTab={() => {}}>
         Skills
-      </TabButton>
+      </TabButton>,
     );
     expect(screen.getByText("Skills")).toHaveClass("text-brass-300");
   });

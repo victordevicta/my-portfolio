@@ -2,25 +2,24 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
-import {
-  skillsList,
-  educationList,
-  experienceList,
-} from "../utils/tab-data-lists";
+import { skillsList } from "../utils/skills-list";
+import { educationList } from "../utils/education-list";
+import { experienceList } from "../utils/experience-list";
+import { ABOUT_TAB, ABOUT_TAB_LABELS, SECTION_ID } from "../utils/constants";
 
 const TimelineList = ({ items }) => (
-  <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 w-full">
+  <ul className="grid w-full grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-3">
     {items.map((item) => (
       <li key={item.key} className="border-l-2 border-brass-500/50 pl-4">
         <p className="font-semibold text-brass-200">{item.title}</p>
         {item.subtitle && (
-          <p className="text-sm text-brass-100/60 mb-2">{item.subtitle}</p>
+          <p className="text-brass-100/60 mb-2 text-sm">{item.subtitle}</p>
         )}
         <div className="flex flex-wrap gap-2">
           {item.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs rounded-full border border-brass-500/40 px-2 py-0.5 text-brass-100/80"
+              className="text-brass-100/80 rounded-full border border-brass-500/40 px-2 py-0.5 text-xs"
             >
               {tag}
             </span>
@@ -33,8 +32,7 @@ const TimelineList = ({ items }) => (
 
 const TAB_DATA = [
   {
-    title: "Skills",
-    id: "skills",
+    id: ABOUT_TAB.SKILLS,
     content: (
       <TimelineList
         items={skillsList.map((skill) => ({
@@ -47,8 +45,7 @@ const TAB_DATA = [
     ),
   },
   {
-    title: "Education",
-    id: "education",
+    id: ABOUT_TAB.EDUCATION,
     content: (
       <TimelineList
         items={educationList.map((education) => ({
@@ -63,8 +60,7 @@ const TAB_DATA = [
     ),
   },
   {
-    title: "Experience",
-    id: "experience",
+    id: ABOUT_TAB.EXPERIENCE,
     content: (
       <TimelineList
         items={experienceList.map((experience) => ({
@@ -80,8 +76,10 @@ const TAB_DATA = [
   },
 ];
 
+const ABOUT_TABS = Object.values(ABOUT_TAB);
+
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState(ABOUT_TAB.SKILLS);
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -91,9 +89,9 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white scroll-mt-[175px]" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <div className="relative self-start rounded-lg p-1.5 bg-gradient-to-br from-brass-400 via-bronze-600 to-brass-500 shadow-brass w-fit mx-auto md:mx-0">
+    <section className="scroll-mt-[175px] text-white" id={SECTION_ID.ABOUT}>
+      <div className="items-start gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 xl:gap-16 xl:px-16">
+        <div className="relative mx-auto w-fit self-start rounded-lg bg-gradient-to-br from-brass-400 via-bronze-600 to-brass-500 p-1.5 shadow-brass md:mx-0">
           <Image
             src={"/images/steampunk-computer.png"}
             alt="steampunk computer"
@@ -104,11 +102,11 @@ const AboutSection = () => {
           />
         </div>
 
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="font-serif text-4xl font-bold text-brass-300 mb-4 tracking-wide">
+        <div className="mt-4 flex h-full flex-col text-left md:mt-0">
+          <h2 className="mb-4 font-serif text-4xl font-bold tracking-wide text-brass-300">
             About Me
           </h2>
-          <p className="text-base md:text-lg text-brass-100/80 text-justify">
+          <p className="text-brass-100/80 text-justify text-base md:text-lg">
             Full-stack developer with experience building enterprise web
             applications, backend services, integrations and internal business
             systems across healthcare, finance, media, real estate and offshore
@@ -128,27 +126,18 @@ const AboutSection = () => {
       </div>
 
       <div className="px-4 xl:px-16">
-        <div className="flex flex-row justify-start mt-8">
-          <TabButton
-            selectTab={() => handleTabChange("skills")}
-            active={tab === "skills"}
-          >
-            Skills
-          </TabButton>
-          <TabButton
-            selectTab={() => handleTabChange("education")}
-            active={tab === "education"}
-          >
-            Education
-          </TabButton>
-          <TabButton
-            selectTab={() => handleTabChange("experience")}
-            active={tab === "experience"}
-          >
-            Experience
-          </TabButton>
+        <div className="mt-8 flex flex-row justify-start">
+          {ABOUT_TABS.map((tabId) => (
+            <TabButton
+              key={tabId}
+              selectTab={() => handleTabChange(tabId)}
+              active={tab === tabId}
+            >
+              {ABOUT_TAB_LABELS[tabId]}
+            </TabButton>
+          ))}
         </div>
-        <div className="flex mt-8">
+        <div className="mt-8 flex">
           {TAB_DATA.find((t) => t.id === tab).content}
         </div>
       </div>

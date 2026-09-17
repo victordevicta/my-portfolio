@@ -1,4 +1,5 @@
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import { SECTION_ID, SOCIAL_LINKS } from "../utils/constants";
 
 const GitHubIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -17,10 +18,10 @@ const Footer = () => {
 
   return (
     <footer
-      id="contact"
-      className="scroll-mt-[175px] text-white px-4 xl:px-16 pb-10"
+      id={SECTION_ID.CONTACT}
+      className="scroll-mt-[175px] px-4 pb-10 text-white xl:px-16"
     >
-      <div className="flex flex-col items-center text-center gap-4 py-6">
+      <div className="flex flex-col items-center gap-4 py-6 text-center">
         <p className="font-serif text-xl text-brass-200">
           Victor de Victa
           <span className="text-brass-100/60 font-sans text-base">
@@ -31,27 +32,27 @@ const Footer = () => {
 
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/victordevicta"
+            href={SOCIAL_LINKS.GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-brass-300/80 hover:text-brass-200 transition-colors"
+            className="text-brass-300/80 transition-colors hover:text-brass-200"
           >
             <GitHubIcon className="h-6 w-6" />
           </a>
           <a
-            href="https://www.linkedin.com/in/victor-de-victa-69686a56/"
+            href={SOCIAL_LINKS.LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-brass-300/80 hover:text-brass-200 transition-colors"
+            className="text-brass-300/80 transition-colors hover:text-brass-200"
           >
             <LinkedInIcon className="h-6 w-6" />
           </a>
           <a
-            href="mailto:victordevicta@gmail.com"
+            href={`mailto:${SOCIAL_LINKS.EMAIL}`}
             aria-label="Email"
-            className="text-brass-300/80 hover:text-brass-200 transition-colors"
+            className="text-brass-300/80 transition-colors hover:text-brass-200"
           >
             <EnvelopeIcon className="h-6 w-6" />
           </a>

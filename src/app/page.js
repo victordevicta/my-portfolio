@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <NavBar />
-      <div className="container mt-24 mx-auto px-6 sm:px-12 py-4">
+      <div className="container mx-auto mt-24 px-6 py-4 sm:px-12">
         <HeroSection />
         <SectionDivider />
         <AboutSection />

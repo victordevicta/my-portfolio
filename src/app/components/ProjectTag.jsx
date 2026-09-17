@@ -1,12 +1,15 @@
 import React from "react";
+import clsx from "clsx";
 
 const ProjectTag = ({ name, onClick, isSelected }) => {
-  const buttonStyles = isSelected
-    ? "text-bronze-950 bg-gradient-to-br from-brass-300 to-brass-500 border-brass-400"
-    : "text-brass-200/80 border-brass-500/40 hover:border-brass-300 hover:text-brass-300";
   return (
     <button
-      className={`${buttonStyles} rounded-full border-2 px-6 py-3 text-xl cursor-pointer transition-colors`}
+      className={clsx(
+        "cursor-pointer rounded-full border-2 px-6 py-3 text-xl transition-colors",
+        isSelected
+          ? "border-brass-400 bg-gradient-to-br from-brass-300 to-brass-500 text-bronze-950"
+          : "border-brass-500/40 text-brass-200/80 hover:border-brass-300 hover:text-brass-300",
+      )}
       onClick={() => onClick(name)}
     >
       {name}
